@@ -1,12 +1,32 @@
 // This defines all syntax variables that syntax themes must implement when they
 // include a syntax-variables.less file.
 
-// General colors
-@syntax-text-color: #c5c8c6;
-@syntax-cursor-color: white;
-@syntax-selection-color: #444;
-@syntax-selection-flash-color: #eee;
+// Settings -----------------------------------
+
+@theme-color: hsl(220, 100%, 50%);
+@theme-adjust-saturation: 0%; // -/+n%
+@theme-adjust-contrast:   0%;
+
+// Config -----------------------------------
+
+@syntax-hue:          hsvhue(@theme-color);
+@syntax-hue-accent:   @syntax-hue + 176;
+@syntax-saturation:   max(20% + @theme-adjust-saturation, 0%); // limit to > 0%
+@syntax-brightness:   20%;
+@syntax-contrast:     @theme-adjust-contrast * 0.1;
+
+
+// General colors -----------------------------
+
 @syntax-background-color: #292c33;
+@syntax-bracket-matcher-background-color: lighten(@syntax-background-color, 6%);
+@syntax-accent-color: hsl(@syntax-hue, @theme-adjust-saturation + 90%, (@syntax-brightness + (@syntax-contrast*10) + 40%) );
+@syntax-text-color: #c5c8c6;
+@syntax-cursor-color: @syntax-accent-color;
+@syntax-selection-color: lighten(@syntax-background-color, 10%);
+@syntax-selection-flash-color: @syntax-accent-color;
+
+@syntax-cursor-line: hsla(@syntax-hue, 100%,  80%, .04); // needs to be semi-transparent to show serach results
 
 // Guide colors
 @syntax-wrap-guide-color: rgba(197, 200, 198, .1);
@@ -18,10 +38,11 @@
 @syntax-result-marker-color-selected: white;
 
 // Gutter colors
-@syntax-gutter-text-color: @syntax-text-color;
-@syntax-gutter-text-color-selected: @syntax-gutter-text-color;
-@syntax-gutter-background-color: @syntax-background-color;
-@syntax-gutter-background-color-selected: rgba(255, 255, 255, 0.14);
+
+@syntax-gutter-text-color: hsl(@syntax-hue, @syntax-saturation/8, 16% + @syntax-brightness + @syntax-contrast);
+@syntax-gutter-text-color-selected: @syntax-text-color;
+@syntax-gutter-background-color: darken(@syntax-background-color, 1%);
+@syntax-gutter-background-color-selected: lighten(@syntax-background-color, 2%);
 
 // For git diff info. i.e. in the gutter
 @syntax-color-renamed: #96CBFE;
