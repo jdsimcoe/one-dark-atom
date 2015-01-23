@@ -1,7 +1,7 @@
 {
   "name": "one-dark-atom",
   "theme": "syntax",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Default dark syntax theme ported to match one-dark-ui.",
   "repository": "https://github.com/jdsimcoe/one-dark-atom",
   "license": "MIT",
