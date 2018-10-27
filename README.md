@@ -1,5 +1,5 @@
-# One Dark Atom syntax theme
+![screenshot](https://cl.ly/ce135b2dd804/image)
 
-Default dark syntax theme ported to match [one-dark-ui](https://github.com/atom/one-dark-ui).
+# One Dark Atom
 
-![One Dark Atom theme screenshot](https://s3.amazonaws.com/f.cl.ly/items/2L1T1t0r1i3k31450m2K/atom-one-dark.png)
+A modern, sleek, default dark syntax theme ported to match [one-dark-ui](https://github.com/atom/one-dark-ui).
