@@ -1,4 +1,4 @@
-![screenshot](https://cl.ly/ce135b2dd804/image)
+![screenshot](https://cl.ly/0591932da704/image)
 
 # One Dark Atom
 
